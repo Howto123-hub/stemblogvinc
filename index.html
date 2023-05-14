@@ -1,0 +1,146 @@
+<script>
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          // User is logged in and authorized your app
+          var accessToken = response.authResponse.accessToken;
+          // Perform any necessary actions or API calls with the access token
+        } else {
+          // User is not logged in to Facebook or hasn't authorized your app
+        }
+      });
+    }
+  </script>
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '9185893944817367',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v13.0'
+      });
+    };
+  
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=9185893944817367&autoLogAppEvents=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+    
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Login</title>
+      <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=YOUR_APP_ID&autoLogAppEvents=1" async defer></script>
+      <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f4f4;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        }
+    
+        .container {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 40px;
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          text-align: center;
+        }
+    
+        .container h2 {
+          margin-bottom: 20px;
+          color: #333333;
+        }
+    
+        .container form input[type="text"],
+        .container form input[type="password"] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #cccccc;
+          border-radius: 5px;
+          margin-bottom: 20px;
+          font-size: 16px;
+          transition: border-color 0.3s ease;
+        }
+    
+        .container form input[type="text"]:focus,
+        .container form input[type="password"]:focus {
+          outline: none;
+          border-color: #7f9cf5;
+        }
+    
+        .container form input[type="submit"] {
+          width: 100%;
+          padding: 12px;
+          border: none;
+          border-radius: 5px;
+          color: #ffffff;
+          background-color: #7f9cf5;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+    
+        .container form input[type="submit"]:hover {
+          background-color: #577eeb;
+        }
+    
+        .container .fb-login-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          padding: 12px;
+          border: none;
+          border-radius: 5px;
+          color: #ffffff;
+          background-color: #3b5998;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          margin-top: 20px;
+        }
+    
+        .container .fb-login-button:hover {
+          background-color: #2d4373;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h2>Login</h2>
+        <form>
+          <input type="text" placeholder="Username" required>
+          <br>
+          <input type="password" placeholder="Password" required>
+          <br>
+          <input type="submit" value="Login">
+        </form>
+        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-onlogin="checkLoginState();"></div>
+      </div>
+    
+      <script>
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+              // User is logged in and authorized your app
+              window.location.href = "home.html";
+            } else {
+              // User is either not logged in to Facebook or hasn't authorized your app
+              console.log('User cancelled login or did not fully authorize.');
+            }
+          });
+        }
+      </script>
+    </body>
+    </html> 
+    
+    

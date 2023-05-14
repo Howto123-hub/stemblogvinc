@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=YOUR_APP_ID&autoLogAppEvents=1" async defer></script>
+</head>
+<body>
+  <h1>Welcome to the Home Page</h1>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    function logout() {
+      FB.logout(function(response) {
+        // Handle the logout response
+        if (response.status === 'unknown') {
+          // User is successfully logged out
+          window.location.href = "index.html";
+        } else {
+          // An error occurred during logout
+          console.log('An error occurred during logout.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
