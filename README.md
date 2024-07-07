@@ -2,5 +2,5 @@
 
 I want to gather moments and store it here...
 
-[Visit VinBlog 2022](https://github.com)
+[Visit VinBlog 2022](https://howto123-hub.github.io/vinblog2022/)
 
